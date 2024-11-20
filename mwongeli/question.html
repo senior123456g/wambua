@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landforms Lesson and Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .lesson {
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Landforms Lesson and Quiz</h1>
+
+    <div class="lesson">
+        <h2>Lesson on Landforms</h2>
+        <p>Landforms are natural features of the Earth's surface. They include mountains, valleys, plateaus, hills, plains, and more.</p>
+        <p>Some common types of landforms are:</p>
+        <ul>
+            <li><strong>Mountains:</strong> Large landforms that rise prominently above their surroundings.</li>
+            <li><strong>Valleys:</strong> Low areas of land between hills or mountains, often with rivers running through them.</li>
+            <li><strong>Plateaus:</strong> Elevated flat areas that are often surrounded by steep cliffs.</li>
+            <li><strong>Hills:</strong> Smaller elevations of the Earth's surface, typically not as tall as mountains.</li>
+            <li><strong>Plains:</strong> Large areas of flat or gently rolling land, often with fertile soil.</li>
+            <li><strong>Deserts:</strong> Arid, dry regions with little vegetation and little rainfall.</li>
+            <li><strong>Canyons:</strong> Deep, narrow valleys with steep sides, often carved by rivers over time.</li>
+        </ul>
+    </div>
+
+    <div class="quiz">
+        <h2>Quiz: Test Your Knowledge!</h2>
+
+        <div class="question">
+            <label for="q1">1. What is the name of a landform that rises prominently above its surroundings?</label><br>
+            <input type="text" id="q1" placeholder="Your answer"><br>
+            <button class="btn" onclick="checkAnswer('q1', 'mountain')">Submit Answer</button>
+            <p id="result-q1" class="result"></p>
+        </div>
+
+        <div class="question">
+            <label for="q2">2. What is the name of a flat elevated area often surrounded by cliffs?</label><br>
+            <input type="text" id="q2" placeholder="Your answer"><br>
+            <button class="btn" onclick="checkAnswer('q2', 'plateau')">Submit Answer</button>
+            <p id="result-q2" class="result"></p>
+        </div>
+
+        <div class="question">
+            <label for="q3">3. What landform is characterized by dry, arid conditions and little vegetation?</label><br>
+            <input type="text" id="q3" placeholder="Your answer"><br>
+            <button class="btn" onclick="checkAnswer('q3', 'desert')">Submit Answer</button>
+            <p id="result-q3" class="result"></p>
+        </div>
+
+        <div class="question">
+            <label for="q4">4. What landform is a low area between hills or mountains, often with a river?</label><br>
+            <input type="text" id="q4" placeholder="Your answer"><br>
+            <button class="btn" onclick="checkAnswer('q4', 'valley')">Submit Answer</button>
+            <p id="result-q4" class="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer) {
+            var userAnswer = document.getElementById(questionId).value.trim().toLowerCase();
+            var resultId = 'result-' + questionId;
+            var resultText = document.getElementById(resultId);
+
+            if (userAnswer === correctAnswer) {
+                resultText.textContent = "Correct! Well done.";
+                resultText.style.color = "green";
+            } else {
+                resultText.textContent = "Oops! The correct answer is: " + correctAnswer + ".";
+                resultText.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
